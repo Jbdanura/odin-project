@@ -1,0 +1,40 @@
+a{
+    justify-content: space-between;
+    font-size: 3vh;
+}
+.header{
+    display: flex;
+    gap: 40%;
+    margin-left: -10%;
+}
+
+.btn-menu{
+    font-size: 3vh;
+    border-radius: 3%;
+    padding: 3%;
+    margin-left: 34%;
+    margin-top: 3%;
+    background-color: rgb(173, 173, 173);
+}
+#content{
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+}
+.container{
+    margin-top: 10%;
+}
+.logo{
+    text-align: center;
+}
+.foods{
+    display: flex;
+    flex-direction: column;
+    margin-top: -10%;
+
+}
+.food{
+    margin-bottom: 10%;
+}

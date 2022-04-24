@@ -1,0 +1,53 @@
+body{
+    background-color: cornflowerblue;
+    color: rgb(49, 49, 49);
+    font-size: 18px;
+}
+#container{
+    top: 50%;
+    left: 50%;
+    width: 25%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.61);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 40px 70px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    padding: 20px;
+    border: 0;
+    border-radius: 5px;
+}
+#description{
+   
+}
+ul{
+    list-style-type: none;
+    padding: 0;
+}
+li{
+    padding-bottom: 10px;
+}
+button{
+    margin-left:-45px;
+}
+#country{
+    font-size: 30px;
+}
+img{
+    border: 0;
+    outline: none;
+}
+#flag{
+  
+}
+#container-country{
+    display:inline-block;
+}
+#state,#temperature{
+    font-size: 20px;
+}

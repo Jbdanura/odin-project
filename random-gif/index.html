@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%239800a1' fill-opacity='0.22'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            background-color: #e6d8e7;
+        }
+        .container{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20%;
+        }
+        #gif{
+            
+        }
+        .search{
+            display: flex;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search">
+            <input type="text" id="name">
+            <button onclick="search()">Search</button>
+        </div>
+
+        <img id="gif" src="">
+    </div>
+
+    <script>
+        var key = "tOMT9lbjrl9ZdWX3vO585juvi8RTboCy"
+        var url = "https://api.giphy.com/v1/gifs/translate"
+        var img = document.getElementById("gif")
+        console.log(url)
+        function displayGif(name){
+            let gifUrl = url + "?api_key=" + key + "&s=" + name
+            fetch(gifUrl,{mode:"cors"}).then(function(response){
+                return response.json()
+            }).then(function(response){
+                img.src = response.data.images.original.url;
+            }).catch(function(error){
+                console.log(error)
+                img.innerHTML = "Not found"
+            })
+        }
+        function search(){
+            let name = document.getElementById("name").value
+            console.log(name)
+            displayGif(name)
+        }
+
+            
+    </script>
+</body>
+</html>

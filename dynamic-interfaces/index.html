@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .dropdown-content{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+
+        .dropbtn{
+            padding: 1%;
+            background-color:rgb(233, 233, 233);
+            border: 0%;
+        }
+        .color{
+            background-color: red;
+        }
+        .dropdown-content a{
+            color: black;
+            padding: 5%;
+            display: block;
+        }
+        .dropdown-content{
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            width: 100px;
+            z-index: 1;
+        }
+        .slideshow{
+            width: 80%;
+            position: relative;
+        }
+        .slideImg{
+            display: none;
+        }
+        .prev, .next{
+            cursor: pointer;
+            position: absolute;
+            margin-top: -22%;
+            color: white;
+            font-size: 3em;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.2)
+        }
+        .next{
+            right: 0;
+        }
+        .prev:hover, .next:hover{
+            background-color: rgba(0, 0, 0, 0.8)
+        }
+        .dots{
+            position: absolute;
+            margin-top: -3%;
+            right: 45%;
+        }
+        .dot{
+            height: 25px;
+            width: 25px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: white;
+            margin-right: 5px;
+        }
+        .dot:not(.active):hover{
+            background-color: grey;
+        }
+        .active{
+            background-color:rgb(56, 55, 55)
+        }
+    </style>
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+            <a href="#">Caca</a>
+            <a href="#">Lmao</a>
+            <a href="#">watefok</a>
+        </div>
+    </div>
+    
+    <div class="slideshow">
+        <div class="slideImg" id="1">
+            <img src="1.jpg" width="100%";>
+        </div>
+        <div class="slideImg" id="2">
+            <img src="2.jpg" width="100%";>
+        </div>
+        <div class="slideImg" id="3">
+            <img src="3.jpg" width="100%";>
+        </div>
+        <a href="#" class="prev" onclick="calcSlide(-1)">&#10094</a>
+        <a href="#" class="next" onclick="calcSlide(1)">&#10095</a>
+        <div class="dots">
+            <span class="dot" onclick="showSlide(0)"></span>
+            <span class="dot" onclick="showSlide(1)"></span>
+            <span class="dot" onclick="showSlide(2)"></span>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const slides = document.querySelectorAll(".slideImg")
+    const dots = document.querySelectorAll(".dot")
+    slides[0].style.display = "block";
+    dots[0].classList.add("active")
+    var currentSlide = 0
+
+    function calcSlide(n){
+        showSlide(currentSlide + n)
+    }
+    function showSlide(n){
+        console.log("called")
+        slides[currentSlide].style.display = "none"
+        dots[currentSlide].classList.remove("active")
+        if(n < 0){
+            n = slides.length - 1
+        }
+        if(n > slides.length - 1){
+            n = 0;
+        }
+        slides[n].style.display = "block"
+        dots[n].classList.add("active")
+        currentSlide = n
+    }
+
+    setInterval(function(){showSlide(currentSlide+1)}, 5000)
+
+    var dropbtn = document.querySelector(".dropbtn")
+    var dropcontent = document.querySelector(".dropdown-content")
+    dropbtn.addEventListener("click",function(){
+        dropcontent.classList.toggle("show")
+        dropbtn.classList.toggle("color")
+    })
+
+    window.onclick = function(e){
+        if(!e.target.matches(".dropbtn")){
+            if (dropcontent.classList.contains("show")){
+                dropcontent.classList.remove("show")
+                dropbtn.classList.remove("color")
+            }
+        }
+    }
+</script>

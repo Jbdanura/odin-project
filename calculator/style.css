@@ -1,0 +1,42 @@
+.container{
+    margin-top: 10%;
+    max-width: 300px;
+    margin-left: 40%;
+}
+button{
+    width: 73px;
+    height: 70px;
+    background-color: rbga(255, 255, 255, 0.75);
+    float: left;
+}
+button:hover{
+    background-color: #a9a9a9;
+}
+.span-two{
+    width: 146px;
+    background-color: rgba(141, 3, 141, 0.513);
+    background-color: rgba(139, 0, 139, 0.8);
+}
+.display{
+    outline: 1px solid black;
+    width: 290px;
+    height: 80px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 5px;
+    color: white;
+}
+body{
+    background: linear-gradient(to right, #CBCE91FF, #EA738DFF);
+}
+.operator{
+    background-color:#ff3939b2;
+}
+.display{
+    position: relative;
+}
+.current{
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 25px;
+}

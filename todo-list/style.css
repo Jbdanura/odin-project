@@ -1,0 +1,112 @@
+
+.modal-content{
+    background-color: white;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    height: 50vh;
+    width: 50vh;
+    border-radius: 1%;
+    padding: 1%;
+}
+.modal-header{
+    display: flex;
+    justify-content: space-between;
+}
+.add-project, .add-task{
+    display: inline-block;
+}
+.add-task{
+    margin-left: 20%;
+}
+.project-modal button, .task-modal button{
+    width: 5vh;
+    height: 3vh;
+    background-color: rgba(255, 59, 59, 0.623);
+    border-radius: 1%;
+    padding: 1%;
+}
+
+.project-modal, .task-modal, .divModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.project-container, .task-container{
+    display: inline-block;
+}
+.add-project, .add-task{
+    font-size: 3vh;
+}
+.add-project:hover, .add-task:hover{
+    background-color: rgba(187, 187, 187, 0.575);
+}
+
+.project-container{
+    width: 20%;
+}
+.task-container{
+    left: 20%;
+    position: absolute;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 1%;
+}
+
+input{
+    margin-bottom: 5%;
+}
+
+label{
+    margin-bottom: 0.5%;
+}
+.addTask-btn, .addProject-btn{
+    width: 10vw;
+}
+
+.project-modal .modal-content {
+    height: 30%;
+}
+
+.project-container{
+    flex-direction: column;
+}
+
+.subproject{
+    margin-top: 3%;
+    font-size: 3vh;
+    word-break: break-all;
+    margin-bottom: 3%;
+}
+.subproject:hover{
+    background-color: rgb(231, 231, 231)
+}
+
+.add-project{
+    margin-bottom: 1%;
+}
+.task-container{
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.subtask {
+    display: inline-block;
+    font-size: 3vh;
+    margin: 3%;
+    padding: 3%;
+    border: 1px solid black;
+    border-radius: 3%;
+}

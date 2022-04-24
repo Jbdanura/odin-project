@@ -1,0 +1,57 @@
+#play{
+    padding: 20px 70px;
+    background-color: rgb(132, 207, 20);
+    font-weight: bolder;
+    color: white;
+    border-radius: 3px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    margin-top: 40px;
+    font-size: 20px;
+}
+body{
+    background-color: #e5e5f7;
+    opacity: 0.8;
+}
+#options > * {
+    border: 3px solid black;
+    border-radius: 3px;
+}
+#options > *:hover{
+    transform: scale(1.4);
+}
+#options{
+    display: flex;
+    justify-content: space-evenly;
+}
+.container{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+#points{
+    font-size: 100px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#result{
+    font-size: 40px;
+    max-width: 90%;
+    word-wrap: break-all;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 5%;
+    margin-top: 5%;
+}
+#you, #enemy{
+    font-size: 30px;
+}
+#who{
+    display: flex;
+    justify-content: space-evenly;
+}

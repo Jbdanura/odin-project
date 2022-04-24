@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #e3e3e3;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            background: white;
+            width: 30vw;
+            padding: 40px;
+            border-radius: 10px;
+            position: absolute;
+            top: 17%;
+            left: 33%;
+            box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        }
+        form * {
+            padding: 5px;
+        }
+        input{
+            max-width: 30vw;
+            height: 3vh;
+            margin-bottom: 2vh;
+
+        }
+        label, .submit-btn{
+            font-family: Verdana, sans-serif;
+            font-size: 20px;
+            color: #eca100;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .submit-btn{
+            margin-top: 20px;
+            width: 150px;
+            height: 50px;
+            text-align: center;
+            background-color:darkorange;
+            color: white;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="email">Email</label>
+        <input type="name" maxlength="320" name="email" onblur="validateEmail()">
+        <span id="emailError" style="display: none">
+            Invalid email address
+        </span>
+        <label for="zip">Zip code</label>
+        <input type="number" maxlength="5" name="zip" onblur="validateZip()">
+        <span id="zipError" style="display: none">
+            Invalid zip number
+        </span>
+        <label for="country">Country</label>
+        <input type="text" maxlength="60" name="country" onblur="validateCountry()">
+        <span id="countryError" style="display: none">
+            Invalid country name
+        </span>
+        <label for="password">Password</label>
+        <input type="password" maxlength="100" name="password" onblur="validatePassword()">
+        <span id="passwordError" style="display: none">
+            Password must be longer than 6 digits
+        </span>
+        <label for="password-confirmation">Confirm password</label>
+        <input type="password" maxlength="100" name="password-confirmation" onblur="validatePassword()">
+        <span id="password-confirmationError" style="display: none">
+            Password doesn't match
+        </span>
+        <input type="submit" class="submit-btn" onclick="validateForm()">
+    </form>
+</body>
+</html>
+<script>
+    function validateEmail(){
+        let msg = document.querySelector("#emailError")
+        function error(){
+            document.querySelector("form").email.style.border = "3px solid red"
+            msg.style.display = "block"
+            msg.style.color = "red"
+        }
+        let email = document.querySelector("form").email.value
+        const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        let result = re.test(email)
+        if(email === "" || !result){
+            error()
+            return false;
+        } else {
+            document.querySelector("form").email.style.border = "3px solid green"         
+            msg.style.display = "none"
+            return true;
+        }
+    }
+    function validateZip(){
+        let msg = document.querySelector("#zipError")
+        function error(){
+            document.querySelector("form").zip.style.border = "3px solid red"
+            msg.style.display = "block"
+            msg.style.color = "red"
+        }
+        let zip = document.querySelector("form").zip.value
+        if (zip === "" || zip.length != 5 && zip.length != 4){
+            error()
+            return false;
+        }else {
+            document.querySelector("form").zip.style.border = "3px solid green"            
+            msg.style.display = "none"
+            return true;
+        }
+    }
+    function validateCountry(){
+        let msg = document.querySelector("#countryError")
+        function error(){
+            document.querySelector("form").country.style.border = "3px solid red"
+            msg.style.display = "block"
+            msg.style.color = "red"
+        }
+        let country = document.querySelector("form").country.value
+        if (country === "" || /\d/.test(country) || country.length < 4){
+            error()
+            return false;
+        }else {
+            document.querySelector("form").country.style.border = "3px solid green"            
+            msg.style.display = "none"
+            return true;
+        }
+        
+    }
+    function validatePassword(){
+        let msg = document.querySelector("#passwordError")
+        function error(){
+            document.querySelector("form").password.style.border = "3px solid red"
+            msg.style.display = "block"
+            msg.style.color = "red"
+        }
+        let msgC = document.querySelector("#password-confirmationError")
+        function errorC(){
+            document.querySelector("form")['password-confirmation'].style.border = "3px solid red"
+            msgC.style.display = "block"
+            msgC.style.color = "red"
+        }
+        let passwordConfirmation = document.querySelector("form")['password-confirmation'].value
+        let password = document.querySelector("form").password.value
+        if (passwordConfirmation === "" || passwordConfirmation.length < 6 || password === "" || password.length < 6 || password != passwordConfirmation){
+            errorC()
+            error()
+            return false;
+        } else {
+            document.querySelector("form")['password-confirmation'].style.border = "3px solid green"            
+            msg.style.display = "none"
+            document.querySelector("form").password.style.border = "3px solid green"            
+            msgC.style.display = "none"
+            return true;
+        }
+
+    }
+        
+    
+
+    function validateForm(){
+        event.preventDefault()
+        if (validateEmail() && validateCountry() && validatePassword() && validateZip()){
+            alert("Account created")
+        } else {
+            alert("Please correct your errors")
+            validateEmail()
+            validateCountry()
+            validatePassword() 
+            validateZip()
+        }
+    }
+</script>

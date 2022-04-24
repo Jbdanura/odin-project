@@ -1,0 +1,12 @@
+html 
+    head 
+        title Message form
+        style 
+            include style.css
+    body 
+        .newMessage
+            h1 New message
+            form(method="POST", action="/new")
+                input(type="text",placeholder="Name:",name="name")
+                textarea(placeholder="Message:",name="message")
+                button(type="submit",class="send") Send

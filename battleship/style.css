@@ -1,0 +1,90 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.enemy-board{
+    display: none;
+}
+.empty-part, .empty-part-enemy{
+    width: 6vh;
+    height: 6vh;
+    outline: 1px solid black;
+    float: left;
+}
+
+.ship-part{
+    width: 6vh;
+    height: 6vh;
+    outline: 1px black;
+    background-color: rgb(90, 90, 238);
+    outline: 1px solid black;
+    float: left;
+}
+.ship-part-enemy{
+    width: 6vh;
+    height: 6vh;
+    outline: 1px black;
+    outline: 1px solid black;
+    float: left;
+}
+
+.player-container{
+    display: flex;
+}
+.enemy-container{
+    display: flex;
+    
+}
+h1{
+    margin: 0;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 5vh;
+    width: 100%;
+    background-color: rgb(30, 185, 82);
+}
+.container{
+    display: flex;
+    margin-top: 5%;
+    justify-content: space-evenly;
+}
+
+.play-btn{
+    padding: 20px 40px;
+    background-color: rgb(30, 185, 82);
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 5%;
+}
+
+
+
+.empty-part:hover, .ship-part:hover, .ship-part-enemy:hover, .empty-part-enemy:hover{
+    transform: scale(1.01);
+    background-color: rgba(128, 128, 128, 0.685);
+}
+@media (max-width: 1400px){
+    .empty-part, .empty-part-enemy{
+        width: 5vh;
+        height: 5vh;
+    }
+    .ship-part{
+        width: 5vh;
+        height: 5vh;
+    }
+    .ship-part-enemy{
+        width: 5vh;
+        height: 5vh;
+    }
+    .container{
+        display: block;
+        margin-left: 5%;
+    }
+    .enemy-container{
+        margin-top: 10%;
+    }
+}

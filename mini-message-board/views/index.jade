@@ -1,0 +1,13 @@
+html 
+    head 
+        title #{title}
+        style 
+            include style.css
+    body 
+        a(href="/new")
+            button.addMessage  + Add message
+        each message in messages
+            .message
+                p.text #{message.text}
+                p.user By #{message.user}
+                p.date #{message.added}

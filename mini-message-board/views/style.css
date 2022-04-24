@@ -1,0 +1,43 @@
+.message{
+    background-color: rgb(243, 243, 243);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 30px;
+    padding-left: 30px;
+}
+.text{
+    padding-bottom: 10px;
+}
+.user{
+    font-weight: bold;
+}
+.date{
+    font-style: italic;
+}
+.addMessage{
+    padding: 25px 50px;
+    background-color: rgb(132, 169, 248);
+    color: white;
+    font-size: 25px;
+    margin: 20px 10px;
+    border-radius: 50px;
+}
+.newMessage{
+    margin: 0 auto;
+    width: 600px;
+}
+.newMessage h1{
+    
+}
+
+.newMessage input,textarea{
+    display: block;
+    width: 300px;
+    margin-top: 10px;
+}
+.send{
+    font-size: 15px;
+    padding: 10px 20px;
+    background-color: rgb(94, 230, 94);
+    margin-top: 20px;
+}
