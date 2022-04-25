@@ -1,0 +1,253 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  background-color: rgb(95, 95, 95);
+  font-size: 20px;
+}
+.container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-general-container *, .form-education-container *, .form-experience-container * {
+  display: block;
+
+}
+h3{
+  text-align: center;
+  margin-bottom: 20px;
+}
+.form-container{
+  transform: translateX(20%);
+}
+
+.form-education-container{
+  margin: 50px 0;
+}
+.form-general-container{
+  margin: 50px 0; 
+}
+.form-container input{
+  width: 15vw;
+  height: 40px;
+  border: none;
+  padding: 5px;
+}
+
+.form-container input:focus{
+  border: 1px solid black;
+  border-radius: 1px;
+
+}
+
+.form-general-container , .form-education-container , .form-experience-container{
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: white;
+  padding: 35px;
+  max-width: 20vw;
+}
+
+hr{
+  margin-top: 10px;
+}
+
+.delete, .new{
+  padding: 15px;
+  margin-top: 5px;
+  color: white;
+  font-size: 15px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-left: 20%;
+  width: 60%;
+}
+.delete{
+  background-color: rgb(255, 80, 80);
+}
+.new{
+  background-color: rgb(93, 207, 141);
+}
+.cv-right{
+  background-color: white;
+  padding: 10px;
+  min-height: 60%;
+
+}
+.cv-left{
+  background-color: grey;
+  padding: 10px;
+}
+img{
+  margin-left: 1vw;
+  margin-top: 50px;
+  width: 11vw;
+}
+.cv-container{
+  display: grid;
+  width: 50%;
+  grid-template-columns: 2fr 5fr;
+  min-height: 20%;
+  margin-top: 50px;
+}
+
+.cv-container{
+  word-break:break-all;
+  max-height: 100%;
+  height: 1000px;
+}
+.name, .lastname{
+  font-size: 30px;
+  font-weight: bolder;
+  color: rgb(221, 216, 193);
+}
+.description{
+  margin-top: 20px;
+  font-size: 15px;
+  color: white;
+}
+.contact-info{
+  color:rgb(221, 216, 193);
+  margin-top: 20px;
+}
+.address, .phone{
+  margin-top: 5px;
+  color: white;
+}
+
+.cv-left * {
+  text-align: center;
+}
+.cv-right * {
+  margin-left: 10px;
+}
+.title{
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+.education-h, .experience-h{
+  padding: 2px 50px;
+  background-color: rgb(221, 216, 193);
+  color: rgb(32, 32, 31);
+  margin: 0;
+}
+.education-h{
+  margin-top: 20px;
+}
+.cv-right{
+  padding-bottom: 50px;
+}
+.cv-general{
+  margin-top: 20px;
+}
+footer{
+  background-color: rgb(54, 54, 54);
+  text-align: center;
+  color: white;
+}
+a{
+  text-decoration: none;
+  color: rgb(181, 178, 224);
+}
+
+@media screen and (max-width:1000px) {
+  .container{
+    display: block;
+  }
+  .form-general-container , .form-education-container , .form-experience-container{
+    width: 70vw;
+    max-width: none;
+    margin:50px auto;
+  }
+  .form-container input{
+    width: 70vw;
+    height: 40px;
+    border: none;
+    padding: 5px;
+  }
+  .form-container{
+    transform: none;
+  }
+  .cv-container{
+    width: 100%;
+    font-size: 15px;
+    word-break:break-all;
+  }
+
+  img{
+    width: 20vw;
+    margin: 20px 0;
+  }
+  .name, .lastname{
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgb(221, 216, 193);
+  }
+ 
+  .description{
+    margin-top: 20px;
+    font-size: 25px;
+    color: white;
+  }
+  .contact-info{
+    color:rgb(221, 216, 193);
+    margin-top: 20px;
+  }
+  .address, .phone{
+    margin-top: 5px;
+    color: white;
+  }
+
+  .cv-left * {
+    text-align: center;
+  }
+  .cv-right * {
+    margin-left: 10px;
+  }
+  .title{
+    margin: 20px 0;
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .education-h, .experience-h{
+    padding: 2px 50px;
+    background-color: rgb(221, 216, 193);
+    color: rgb(32, 32, 31);
+    margin: 0;
+    font-size: 25px;
+  }
+  .experience-h{
+    margin-top: 20px;
+  }
+  .cv-right{
+    padding-bottom: 50px;
+  }
+  img{
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+
+  .name, .lastname{
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(221, 216, 193);
+  }
+  .description{
+    font-size: 15px;
+  }
+  .education-h, .experience-h{
+    font-size: 15px;
+  }
+  .title{
+    font-size: 18px;
+  }
+  img{
+    margin-left: 5px;
+  }
+}
+

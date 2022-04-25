@@ -1,0 +1,101 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(41, 40, 40);
+    height: 60px;
+    align-items: center;
+}
+
+.menu{
+    color: white;
+    margin-left: 20px;
+    transform: scale(2,2);
+}
+
+.logo{
+    margin-left: 20px;
+}
+.search{
+    transform: translateX(-15%);
+}
+.search-bar{
+    width: 30vw;
+    background-color: black;
+    border-radius: 1px;
+    height: 4vh;
+    border: 1px solid grey;
+    color: white;
+}
+::placeholder{
+    color: rgb(126, 126, 126);
+    font-weight: bold;
+    font-size: 15px;
+    transform: translateX(2%);
+}
+
+.search-icon{
+    width: 3vw;
+    height: 2vh;
+
+}
+.sign-in{
+    background-color: transparent;
+    border: 1px solid rgb(63, 180, 219);
+    padding: 10px 20px;
+    color: rgb(63, 180, 219);
+    margin-right: 10px;
+}
+
+body{
+    background-color: rgb(22, 22, 22);
+
+}
+
+.video-container {
+    margin-left: 6%;
+    margin-top: 2%;
+}
+.info > *{
+    display: inline-block;
+    margin: 1px;
+    margin-left: 8px;
+}
+
+.info > .right{
+    margin-left: 55%;
+}
+.info{
+    color: rgb(155, 155, 155);
+}
+.info > .right > * {
+    margin-left: 20px;
+}
+.line{
+    display: block;
+    margin-top: 15px;
+    width: 1280px;
+    height: 1px;
+    border: 1px solid rgb(36, 36, 36);
+    transform: translateX(-1%);
+}
+.body{
+    display: flex;
+}
+
+aside{
+    margin-top: 2%;
+}
+.side-video{
+    display: flex;
+    margin-bottom: 5px;
+    color: white;
+}
+p {
+    color: rgb(155, 155, 155);
+    padding: 0;
+    margin: 0;
+}
+.side-info{
+    margin-top: 20px;
+    margin-left: 5px;
+}
